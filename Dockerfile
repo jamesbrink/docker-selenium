@@ -9,7 +9,7 @@ MAINTAINER James Brink, brink.james@gmail.com
 RUN apt-get update \
       && apt-get dist-upgrade -y \
       && useradd -g users -s /bin/bash -d /home/selenium -m selenium \
-      && apt-get install wget unzip openjdk-8-jdk-headless tightvncserver -y \
+      && apt-get install wget unzip openjdk-8-jdk-headless tightvncserver libgconf-2.4 -y \
       && apt-get install automake cmake clang gettext libx11-dev git build-essential autopoint -y  \
       && cd /tmp \
       && git clone https://github.com/joewing/jwm.git \
@@ -57,4 +57,4 @@ ADD docker-assets/xsession /home/selenium/.xsession
 
 # Expose vnc port.
 EXPOSE 5901
-ENTRYPOINT ["/home/selenium/entrypoint.sh"]
+CMD ["/home/selenium/entrypoint.sh"]
