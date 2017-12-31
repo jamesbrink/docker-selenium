@@ -1,6 +1,6 @@
 # Selenium
 #
-# VERSION    %s
+# VERSION 3.8.1   
 
 FROM phusion/baseimage:0.9.22
 MAINTAINER James Brink, brink.james@gmail.com
